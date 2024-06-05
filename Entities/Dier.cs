@@ -10,6 +10,6 @@
         public Klasse Klasse { get; set;}
         public Dieet Dieet { get; set;}
         public int LevensVerwachting { get; set; }
-        public List<DierHabitat> DierHabitats { get;}
+        public List<DierHabitat> DierHabitats { get; set; }
     }
 }
