@@ -7,7 +7,7 @@ namespace API_Project_BenjaminGamrekeli.Services
         IEnumerable<Dier> GetAllDieren();
         Dier GetDier(int id);
         void CreateDier(Dier dier);
-        void UpdateDier(int id);
+        void UpdateDier(Dier dier);
         void DeleteDier(int id);
     }
 }

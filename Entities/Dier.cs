@@ -5,7 +5,6 @@
     {
         public int Id { get; set; }
         public string Naam { get; set;}
-        //public string WetenschappelijkeNaam { get; set; }
         public int KlasseId { get; set; }
         public Klasse Klasse { get; set;}
         public Dieet Dieet { get; set;}

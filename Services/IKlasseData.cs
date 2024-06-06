@@ -6,8 +6,8 @@ namespace API_Project_BenjaminGamrekeli.Services
     {
         IEnumerable<Klasse> GetAllKlassen();
         Klasse GetKlasse(int id);
-        void AddKlasse(Klasse klasse);
-        void UpdateKlasse(int id);
+        void CreateKlasse(Klasse klasse);
+        void UpdateKlasse(Klasse klasse);
         void DeleteKlasse(int id);
     }
 }

@@ -15,6 +15,7 @@ namespace API_Project_BenjaminGamrekeli
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IDierData, DierData>();
+            services.AddScoped<IKlasseData, KlasseData>();
             services.AddControllers();
             services.AddSwaggerGen();
             var connection = configuration.GetConnectionString("DierenDatabase");
