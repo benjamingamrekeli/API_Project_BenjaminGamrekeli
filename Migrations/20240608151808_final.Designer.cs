@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API_Project_BenjaminGamrekeli.Migrations
 {
     [DbContext(typeof(DierContext))]
-    [Migration("20240604152023_Initial")]
-    partial class Initial
+    [Migration("20240608151808_final")]
+    partial class final
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -33,10 +33,10 @@ namespace API_Project_BenjaminGamrekeli.Migrations
 
                     b.HasIndex("HabitatId");
 
-                    b.ToTable("DierHabitat");
+                    b.ToTable("DierHabitats");
                 });
 
-            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Habitat", b =>
+            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Dier", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,7 +97,7 @@ namespace API_Project_BenjaminGamrekeli.Migrations
 
             modelBuilder.Entity("API_Project_BenjaminGamrekeli.DierHabitat", b =>
                 {
-                    b.HasOne("API_Project_BenjaminGamrekeli.Entities.Habitat", "Habitat")
+                    b.HasOne("API_Project_BenjaminGamrekeli.Entities.Dier", "Dier")
                         .WithMany("DierHabitats")
                         .HasForeignKey("DierId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -109,12 +109,12 @@ namespace API_Project_BenjaminGamrekeli.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Habitat");
+                    b.Navigation("Dier");
 
                     b.Navigation("Habitat");
                 });
 
-            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Habitat", b =>
+            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Dier", b =>
                 {
                     b.HasOne("API_Project_BenjaminGamrekeli.Entities.Habitat", null)
                         .WithMany("Dieren")
@@ -129,7 +129,7 @@ namespace API_Project_BenjaminGamrekeli.Migrations
                     b.Navigation("Klasse");
                 });
 
-            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Habitat", b =>
+            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Dier", b =>
                 {
                     b.Navigation("DierHabitats");
                 });

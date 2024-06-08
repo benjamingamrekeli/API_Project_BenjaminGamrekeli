@@ -6,8 +6,8 @@ namespace API_Project_BenjaminGamrekeli.Services
     {
         IEnumerable<Habitat> GetAllHabitats();
         Habitat GetHabitat(int id);
-        void AddHabitat(Habitat habitat);
-        void UpdateHabitat(int id);
+        void CreateHabitat(Habitat habitat);
+        void UpdateHabitat(Habitat habitat);
         void DeleteHabitat(int id);
     }
 }

@@ -36,7 +36,7 @@ namespace API_Project_BenjaminGamrekeli.Migrations
                     b.ToTable("DierHabitats");
                 });
 
-            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Dier", b =>
+            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Habitat", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,7 +97,7 @@ namespace API_Project_BenjaminGamrekeli.Migrations
 
             modelBuilder.Entity("API_Project_BenjaminGamrekeli.DierHabitat", b =>
                 {
-                    b.HasOne("API_Project_BenjaminGamrekeli.Entities.Dier", "Dier")
+                    b.HasOne("API_Project_BenjaminGamrekeli.Entities.Habitat", "Habitat")
                         .WithMany("DierHabitats")
                         .HasForeignKey("DierId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -109,12 +109,12 @@ namespace API_Project_BenjaminGamrekeli.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Dier");
+                    b.Navigation("Habitat");
 
                     b.Navigation("Habitat");
                 });
 
-            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Dier", b =>
+            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Habitat", b =>
                 {
                     b.HasOne("API_Project_BenjaminGamrekeli.Entities.Habitat", null)
                         .WithMany("Dieren")
@@ -129,7 +129,7 @@ namespace API_Project_BenjaminGamrekeli.Migrations
                     b.Navigation("Klasse");
                 });
 
-            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Dier", b =>
+            modelBuilder.Entity("API_Project_BenjaminGamrekeli.Entities.Habitat", b =>
                 {
                     b.Navigation("DierHabitats");
                 });

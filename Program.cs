@@ -14,9 +14,6 @@ using (var context = new DierContext())
     context.SaveChanges();
 }
 
-// habitats aanmaken en
-// dierensoorten aanmaken en toevoegen aan klassen
-// en dierhabitats aanmaken om meer-op-meer relatie te leggen tussen dieren en habitats
 using (var context = new DierContext())
 {
     // dierenklassen aanmaken
@@ -82,13 +79,12 @@ using (var context = new DierContext())
         LevensVerwachting = 50
     };
 
-    // Add classes and habitats to the context
     context.Klassen.AddRange(zoogdier, reptiel, vis, insect);
     context.Habitats.AddRange(grasland, woestijn, regenwoud, zee, bergen);
 
     context.SaveChanges();
 
-    // Add dieren to their respective klassen
+    // dieren aan de klassen toevoegen
     leeuw.KlasseId = zoogdier.Id;
     schildpad.KlasseId = reptiel.Id;
 
@@ -96,7 +92,7 @@ using (var context = new DierContext())
 
     context.SaveChanges();
 
-    // Create DierHabitat entries
+    // meer-op-meer relatie vastleggen in de associatietabel
     var dierhabitat1 = new DierHabitat { DierId = leeuw.Id, HabitatId = grasland.Id };
     var dierhabitat2 = new DierHabitat { DierId = schildpad.Id, HabitatId = regenwoud.Id };
 

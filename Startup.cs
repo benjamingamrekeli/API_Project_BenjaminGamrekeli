@@ -16,6 +16,8 @@ namespace API_Project_BenjaminGamrekeli
         {
             services.AddScoped<IDierData, DierData>();
             services.AddScoped<IKlasseData, KlasseData>();
+            services.AddScoped<IHabitatData, HabitatData>();
+            services.AddScoped<IDierHabitatData, DierHabitatData>();
             services.AddControllers();
             services.AddSwaggerGen();
             var connection = configuration.GetConnectionString("DierenDatabase");
